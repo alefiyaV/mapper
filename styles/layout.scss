@@ -1,0 +1,35 @@
+body {
+  background-color: #EEE;
+}
+
+.navbar {
+  background-color: black;
+  color: white;
+  padding: 1em;
+  padding-left: 1em;
+}
+
+.main-container {
+  background-color: lightgray;
+  padding: 1em;
+  padding-left: 1em;
+  height: 1000px;
+}
+
+#user-profile {
+  background-color: darkgray;
+  padding: 1em;
+  padding-left: 1em;
+}
+
+.main-container {
+  margin: 0 auto;
+}
+
+.map-container  {
+  position: relative;
+}
+
+#map {
+  position: relative;
+}
