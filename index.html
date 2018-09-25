@@ -1,113 +1,33 @@
-<!--  <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Mapper</title>
-
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
-
+<!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Info Windows</title>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <title>Mapper</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
   </head>
 
 
-<script>
-
-      // This example displays a marker at the center of Australia.
-      // When the user clicks the marker, an info window opens.
-
-      function initMap() {
-        var uluru = {lat: 22.396427, lng: 114.109497};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: uluru
-        });
-
-        var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-            '<div id="bodyContent">'+
-            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-            'sandstone rock formation in the southern part of the '+
-            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-            'south west of the nearest large town, Alice Springs; 450&#160;km '+
-            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-            'Aboriginal people of the area. It has many springs, waterholes, '+
-            'rock caves and ancient paintings. Uluru is listed as a World '+
-            'Heritage Site.</p>'+
-            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-            '(last visited June 22, 2009).</p>'+
-            '</div>'+
-            '</div>';
-
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map,
-          title: 'Uluru (Ayers Rock)'
-        });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
-      }
-    </script>
-
-
-
-  <body>
-    <%- include partials/_nav %>
-
-<div class="row">
-  <div class="col-md-10 main-container">
-
-    <a href='/mapper'>Temporary link to the other views page </a>
-    <div>
-    <input value="Register" class="toggle-reg" type="submit"></input>
-    <section class="register">
-    <form class="register">
-      <legend>Register Today</legend>
-      <input type="text" name="email" placeholder="Email"><br>
-      <input type="text" name="name" placeholder="Username"><br>
-      <input type="text" name="password" placeholder="Password"><br>
-      <button type="submit" class="new-user-reg">Register Now!</button>
-    </form>
-  </section>
-  </div>
-
+<body>
+  <div class="row">
+    <div class="col-md-10 main-container">
+      <div>
+        <input value="Register" class="toggle-reg" type="submit"></input>
+        <section class="register">
+        <form class="register">
+          <legend>Register Today</legend>
+            <input type="text" placeholder="Email"><br>
+            <input type="text" placeholder="Username"><br>
+            <input type="text" placeholder="Password"><br>
+            <button type="submit" class="new-user-reg">Register Now!</button>
+        </form>
+        </section>
+      </div>
 
   <div class="welcome">
     <h1>Welcome to Mapper!</h1>
@@ -115,260 +35,16 @@
     <p>After you register, you will have access to create maps, keep all the maps you've made and, keep a tally of your favourited maps too. Without registering, you still have access to all the maps that other users have created. </p>
   </div>
 
-  <div class="map-container">
 
-    <h2>User Created Maps</h2>
-    <div id="map"></div>
+  <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+  <div id="map"></div>
 
-
-
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="map"></div>
-        <script>
-          // This example adds a search box to a map, using the Google Place Autocomplete
-          // feature. People can enter geographical searches. The search box will return a
-          // pick list containing a mix of places and predicted search terms.
-
-          // This example requires the Places library. Include the libraries=places
-          // parameter when you first load the API. For example:
-          // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-          function initAutocomplete() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-              center: {lat: -33.8688, lng: 151.2195},
-              zoom: 13,
-              mapTypeId: 'roadmap'
-            });
-
-            // Create the search box and link it to the UI element.
-            var input = document.getElementById('pac-input');
-            var searchBox = new google.maps.places.SearchBox(input);
-            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-            // Bias the SearchBox results towards current map's viewport.
-            map.addListener('bounds_changed', function() {
-              searchBox.setBounds(map.getBounds());
-            });
-
-            var markers = [];
-            // Listen for the event fired when the user selects a prediction and retrieve
-            // more details for that place.
-            searchBox.addListener('places_changed', function() {
-              var places = searchBox.getPlaces();
-
-              if (places.length == 0) {
-                return;
-              }
-
-              // Clear out the old markers.
-              markers.forEach(function(marker) {
-                marker.setMap(null);
-              });
-              markers = [];
-
-              // For each place, get the icon, name and location.
-              var bounds = new google.maps.LatLngBounds();
-              places.forEach(function(place) {
-                if (!place.geometry) {
-                  console.log("Returned place contains no geometry");
-                  return;
-                }
-                var icon = {
-                  url: place.icon,
-                  size: new google.maps.Size(71, 71),
-                  origin: new google.maps.Point(0, 0),
-                  anchor: new google.maps.Point(17, 34),
-                  scaledSize: new google.maps.Size(25, 25)
-                };
-
-                // Create a marker for each place.
-                markers.push(new google.maps.Marker({
-                  map: map,
-                  icon: icon,
-                  title: place.name,
-                  position: place.geometry.location
-                }));
-
-                if (place.geometry.viewport) {
-                  // Only geocodes have viewport.
-                  bounds.union(place.geometry.viewport);
-                } else {
-                  bounds.extend(place.geometry.location);
-                }
-              });
-              map.fitBounds(bounds);
-            });
-          }
-
-        </script>
+  </div>
   </div>
 
-</div>
-
-</div>
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3v0VKHvMKKQAg21rgqVX94w3QdB6EQ-Q&callback=initMap">
-    </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3v0VKHvMKKQAg21rgqVX94w3QdB6EQ-Q&callback=initMap">
+  </script>
   </body>
 </html>
- -->
-
- <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Info Windows</title>
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-  </head>
-
-    <div id="map"></div>
-    <script>
-
-      // This example displays a marker at the center of Australia.
-      // When the user clicks the marker, an info window opens.
-
-      function initMap() {
-        var uluru = {lat: 22.396427, lng: 114.109497};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-          center: uluru
-        });
-
-        var contentString = '<div id="content">'+
-            '<div id="siteNotice">'+
-            '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-            '<div id="bodyContent">'+
-            '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-            'sandstone rock formation in the southern part of the '+
-            'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-            'south west of the nearest large town, Alice Springs; 450&#160;km '+
-            '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-            'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-            'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-            'Aboriginal people of the area. It has many springs, waterholes, '+
-            'rock caves and ancient paintings. Uluru is listed as a World '+
-            'Heritage Site.</p>'+
-            '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-            'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-            '(last visited June 22, 2009).</p>'+
-            '</div>'+
-            '</div>';
-
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map,
-          title: 'Uluru (Ayers Rock)'
-        });
-        marker.addListener('click', function() {
-          infowindow.open(map, marker);
-        });
-      }
-    </script>
-
-<body>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="map"></div>
-        <script>
-          // This example adds a search box to a map, using the Google Place Autocomplete
-          // feature. People can enter geographical searches. The search box will return a
-          // pick list containing a mix of places and predicted search terms.
-
-          // This example requires the Places library. Include the libraries=places
-          // parameter when you first load the API. For example:
-          // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-
-          function initAutocomplete() {
-            var map = new google.maps.Map(document.getElementById('map'), {
-              center: {lat: -33.8688, lng: 151.2195},
-              zoom: 13,
-              mapTypeId: 'roadmap'
-            });
-
-            // Create the search box and link it to the UI element.
-            var input = document.getElementById('pac-input');
-            var searchBox = new google.maps.places.SearchBox(input);
-            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-            // Bias the SearchBox results towards current map's viewport.
-            map.addListener('bounds_changed', function() {
-              searchBox.setBounds(map.getBounds());
-            });
-
-            var markers = [];
-            // Listen for the event fired when the user selects a prediction and retrieve
-            // more details for that place.
-            searchBox.addListener('places_changed', function() {
-              var places = searchBox.getPlaces();
-
-              if (places.length == 0) {
-                return;
-              }
-
-              // Clear out the old markers.
-              markers.forEach(function(marker) {
-                marker.setMap(null);
-              });
-              markers = [];
-
-              // For each place, get the icon, name and location.
-              var bounds = new google.maps.LatLngBounds();
-              places.forEach(function(place) {
-                if (!place.geometry) {
-                  console.log("Returned place contains no geometry");
-                  return;
-                }
-                var icon = {
-                  url: place.icon,
-                  size: new google.maps.Size(71, 71),
-                  origin: new google.maps.Point(0, 0),
-                  anchor: new google.maps.Point(17, 34),
-                  scaledSize: new google.maps.Size(25, 25)
-                };
-
-                // Create a marker for each place.
-                markers.push(new google.maps.Marker({
-                  map: map,
-                  icon: icon,
-                  title: place.name,
-                  position: place.geometry.location
-                }));
-
-                if (place.geometry.viewport) {
-                  // Only geocodes have viewport.
-                  bounds.union(place.geometry.viewport);
-                } else {
-                  bounds.extend(place.geometry.location);
-                }
-              });
-              map.fitBounds(bounds);
-            });
-          }
-
-        </script>
 
 
-
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC3v0VKHvMKKQAg21rgqVX94w3QdB6EQ-Q&callback=initMap">
-    </script>
-  </body>
-</html>

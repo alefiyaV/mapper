@@ -1,35 +1,136 @@
 body {
   background-color: #EEE;
+  font-family: 'Hind', sans-serif;
 }
 
 .navbar {
-  background-color: black;
+  background-color: #f92758;
   color: white;
   padding: 1em;
-  padding-left: 1em;
+  h1 {
+    padding-left: .4em;
+    font-weight: bolder;
+  }
 }
 
-.main-container {
-  background-color: lightgray;
-  padding: 1em;
-  padding-left: 1em;
+div.main-container {
+  background-color: #f9f9f9;
+  padding: 2em;
   height: 1000px;
+
+  #add-title {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+    margin: 0.7em 0em;
+  }
+
+  #add-description {
+    width: 80%;
+    padding: 1em;
+    margin: 1em 0em;
+  }
+
+
+  #map {
+        height: 60%;
+        width: 80%;
+
+      }
 }
 
-#user-profile {
-  background-color: darkgray;
-  padding: 1em;
-  padding-left: 1em;
+.bolder {
+  font-weight: bolder;
 }
 
-.main-container {
+div#user-profile {
+  background-color: #ffe5dd;
+  padding: 2em;
+  h2 {
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: #e24612;
+  } h3 {
+    font-weight: bolder;
+    font-size: 1em;
+    color: #e24612;
+  }
+}
+
+img.logo {
+  width: 14%;
+  height: 14%;
+  margin-left: 0.3em;
+}
+
+button.logout {
+  margin: 1em;
+
+}
+
+li.listage {
+  list-style-image: url('https://78.media.tumblr.com/18f975dcb0422af5ecae1d1d358bc284/tumblr_inline_p98tp7zyro1rsr1hh_75sq.gif');
+}
+
+div.card {
   margin: 0 auto;
+  box-shadow: 5px 10px 10px gray;
+  margin-top: 3em;
+  height: 385px;
+  width: 480px;
+  border: 3px solid #cc1c45;
+  background-image: url('https://cdn.shopify.com/s/files/1/1016/3209/products/vancouver2_wm_large.jpg')
+
 }
 
-.map-container  {
-  position: relative;
+
+input.form-control {
+  margin: 0 auto;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  margin-left: 2em;
+  width: 80%;
+
 }
 
-#map {
-  position: relative;
+h2.form {
+  padding: 1em;
+  font-weight: 800;
+  color: #cc1c45;
 }
+
+button.login {
+  background-color: #cc1c45;
+  border: #cc1c45;
+  margin: 1em;
+  margin-left: 35px;
+  padding: 4px 9px;
+  border-radius: 3px;
+  color: white;
+  font-weight: bolder;
+  &:hover {
+    color: #cc1c45;
+    background-color: white;
+  }
+}
+
+button.logout {
+  background-color: white;
+  border: #f92758;
+  margin: 1em;
+  padding: 4px 9px;
+  border-radius: 3px;
+  color: #f92758;
+  font-weight: bolder;
+  border: thin solid white;
+  &:hover {
+    color: white;
+    background-color: #f92758;
+    border: thin solid white;
+  }
+}
+
+
+
+
+

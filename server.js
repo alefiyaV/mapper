@@ -40,6 +40,7 @@ app.use(express.static("public"));
 // Mount all resource routes
 app.use("/api/users", usersRoutes(knex));
 app.use("/api/favourites", favouritesRoutes(knex));
+//app.use("/api/markers", markersRoutes(knex))
 
 // Home page
 app.get("/", (req, res) => {
@@ -47,35 +48,47 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/login", (req, res) => {
+app.post("/", (req, res) => {
 
-  let password = req.body.password;
-  let email = req.body.email;
-  console.log("did this work ", email, password);
+  // let password = req.body.password;
+  // let email = req.body.email;
+  // console.log("did this work ", email, password);
 
   //if the password and the username pass authentication
   //then redirect user to the mapper page
   //if the password and/or username don't pass authentication
   //then simply redirect user to the same "/" root page
 
-  res.redirect("mapper");
-})
-
-app.post("/register", (req, res) => {
-  let email = req.body.email;
-  let username = req.body.username;
-  let password = req.body.password;
-  let hashedPassword = bcrypt.hashSync(password, 10);
-
-  //the above info needs to be gathered from the form and sent
-  //and stored in the database so the same user can be auth'd again.
   res.redirect("/mapper");
 })
+
+// app.post("/register", (req, res) => {
+//   // let email = req.body.email;
+//   // let username = req.body.username;
+//   // let password = req.body.password;
+//   // let hashedPassword = bcrypt.hashSync(password, 10);
+
+//   res.redirect("/mapper");
+// })
 
 app.post("/logout", (req, res) => {
   req.session = null;
   res.redirect("/")
 })
+
+// app.post("/api/:id/delete", (req, res) => {
+
+//   for (let var i = 0; i < markers.length) {
+
+//   document.getElementbyId('delete').addEventListener("click", function() {
+
+//     console.log("does this thing work")
+//       delete marker
+//     }
+//     res.redirect("/");
+//   }
+
+// });
 
 
 app.get("/mapper", (req, res) => {
@@ -91,8 +104,9 @@ app.get("/mapper", (req, res) => {
 })
 
 
-app.post("/", (req, res) => {
+app.post("/api/markers/:id/delete", (req, res) => {
 
+  res.redirect("/mapper")
 })
 
 
